@@ -9,7 +9,7 @@ import java.util.zip.GZIPOutputStream;
 
 public final class GZIPUtil {
 
-    private static final Logger logger = LoggerFactory.getLogger(GZIPUtil.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(GZIPUtil.class);
 
     public static final int BUFFER = 1024;
 
@@ -26,7 +26,7 @@ public final class GZIPUtil {
             compress(bais, baos);
             return baos.toByteArray();
         } catch (IOException e) {
-            logger.error("", e);
+            LOGGER.error("", e);
         } finally {
             CloserUtil.close(bais, baos);
         }
@@ -43,7 +43,7 @@ public final class GZIPUtil {
             decompress(bais, baos);
             return baos.toByteArray();
         } catch (IOException e) {
-            logger.error("", e);
+            LOGGER.error("", e);
         } finally {
             CloserUtil.close(bais, baos);
         }
